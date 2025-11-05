@@ -35,7 +35,13 @@
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
 #include "tch_uart.h"
+<<<<<<< HEAD
 #include "mb_rtu.h"
+=======
+#include "tch_mb.h"
+#include "drv_led.h"
+
+>>>>>>> main
 /* add user code end private includes */
 
 /* private typedef -----------------------------------------------------------*/
@@ -75,6 +81,7 @@
  */
 int main(void)
 {
+<<<<<<< HEAD
   /* add user code begin 1 */
 
   /* add user code end 1 */
@@ -113,6 +120,61 @@ int main(void)
     mb_polling();
     /* add user code end 3 */
   }
+=======
+    /* add user code begin 1 */
+
+    /* add user code end 1 */
+
+    /* system clock config. */
+    wk_system_clock_config();
+
+    /* config periph clock. */
+    wk_periph_clock_config();
+
+    /* init debug function. */
+    wk_debug_config();
+
+    /* nvic config. */
+    wk_nvic_config();
+
+    /* timebase config. */
+    wk_timebase_init();
+
+    /* init gpio function. */
+    wk_gpio_config();
+
+    /* init usart1 function. */
+    wk_usart1_init();
+
+    /* init tmr6 function. */
+    wk_tmr6_init();
+
+    /* add user code begin 2 */
+    mb_init();
+
+    drv_led_set(green, TRUE);
+
+    struct serial_rx_configure *serial_rx_1 = drv_get_serial_fifo_1();
+    struct serial_device *serial_device_1 = tch_get_serial("usart1");
+    /* add user code end 2 */
+
+    while (1)
+    {
+        /* add user code begin 3 */
+        mb_polling();
+        drv_led_blink(red);
+        wk_delay_ms(1);
+
+        if (serial_rx_1->is_finished)
+        {
+            // serial->is_finished = FALSE;
+            serial_device_1->ops->putc_sz(serial_device_1, (char *)(serial_rx_1->buffer), serial_rx_1->size);
+            drv_serial_rx_clear(serial_rx_1);
+        }
+
+        /* add user code end 3 */
+    }
+>>>>>>> main
 }
 
 /* add user code begin 4 */

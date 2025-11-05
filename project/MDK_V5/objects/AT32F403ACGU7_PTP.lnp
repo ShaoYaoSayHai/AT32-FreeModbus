@@ -36,8 +36,15 @@
 ".\objects\startup_at32f403a_407.o"
 ".\objects\system_at32f403a_407.o"
 ".\objects\drv_uart.o"
+<<<<<<< HEAD
 ".\objects\tch_uart.o"
 ".\objects\mb_rtu.o"
+=======
+".\objects\drv_led.o"
+".\objects\tch_uart.o"
+".\objects\tch_mb.o"
+".\objects\crc.o"
+>>>>>>> main
 --library_type=microlib --strict --scatter ".\objects\AT32F403ACGU7_PTP.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

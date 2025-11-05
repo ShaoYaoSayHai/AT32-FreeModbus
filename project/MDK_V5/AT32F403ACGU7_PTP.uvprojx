@@ -602,6 +602,14 @@
               <FileType>1</FileType>
               <FilePath>..\..\user\drivers\drv_uart.c</FilePath>
             </File>
+<<<<<<< HEAD
+=======
+            <File>
+              <FileName>drv_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\drivers\drv_led.c</FilePath>
+            </File>
+>>>>>>> main
           </Files>
         </Group>
         <Group>
@@ -613,9 +621,25 @@
               <FilePath>..\..\user\applications\tch_uart.c</FilePath>
             </File>
             <File>
+<<<<<<< HEAD
               <FileName>mb_rtu.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\applications\mb_rtu.c</FilePath>
+=======
+              <FileName>tch_mb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\applications\tch_mb.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>bases</GroupName>
+          <Files>
+            <File>
+              <FileName>crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bases\crc.c</FilePath>
+>>>>>>> main
             </File>
           </Files>
         </Group>

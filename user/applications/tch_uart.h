@@ -21,4 +21,12 @@ void serial_device_init(const char *name);
  */
 struct serial_device *tch_get_serial(const char *name);
 
+<<<<<<< HEAD
+=======
+/**
+ * @brief 清除对应串口上的数据
+ */
+int tch_serial_rx_reset(struct serial_device *px_serial);
+
+>>>>>>> main
 #endif

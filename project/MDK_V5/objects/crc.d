@@ -1,8 +1,15 @@
-./objects/main.o: ..\src\main.c ..\inc\at32f403a_407_wk_config.h \
+./objects/crc.o: ..\..\user\bases\crc.c ..\..\user\bases\crc.h \
+  ..\..\user\configs\base_config.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\ctype.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h ..\inc\wk_system.h \
   ..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h \
   ..\..\libraries\cmsis\cm4\core_support\core_cm4.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\..\libraries\cmsis\cm4\core_support\cmsis_version.h \
   ..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h \
   ..\..\libraries\cmsis\cm4\core_support\cmsis_armclang.h \
@@ -34,20 +41,5 @@
   ..\..\libraries\drivers\inc\at32f403a_407_usb.h \
   ..\..\libraries\drivers\inc\at32f403a_407_wdt.h \
   ..\..\libraries\drivers\inc\at32f403a_407_wwdt.h \
-  ..\..\libraries\drivers\inc\at32f403a_407_xmc.h ..\inc\wk_debug.h \
-  ..\inc\at32f403a_407_wk_config.h ..\inc\wk_tmr.h ..\inc\wk_usart.h \
-  ..\inc\wk_gpio.h ..\inc\wk_system.h ..\..\user\applications\tch_uart.h \
-  ..\..\user\drivers\drv_uart.h ..\..\user\configs\uart_config.h \
-  ..\..\user\configs\base_config.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\ctype.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-<<<<<<< HEAD
-  ..\..\user\applications\mb_rtu.h
-=======
-  ..\..\user\applications\tch_mb.h ..\..\user\drivers\drv_led.h \
-  ..\..\user\configs\base_config.h
->>>>>>> main
+  ..\..\libraries\drivers\inc\at32f403a_407_xmc.h ..\inc\wk_usart.h \
+  ..\inc\at32f403a_407_wk_config.h ..\inc\wk_gpio.h
