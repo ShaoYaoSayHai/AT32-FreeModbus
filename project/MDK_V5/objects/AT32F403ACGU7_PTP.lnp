@@ -1,4 +1,4 @@
---cpu=Cortex-M4.fp
+--cpu=Cortex-M4.fp.sp
 ".\objects\main.o"
 ".\objects\at32f403a_407_wk_config.o"
 ".\objects\at32f403a_407_int.o"
@@ -38,7 +38,8 @@
 ".\objects\drv_uart.o"
 ".\objects\drv_led.o"
 ".\objects\tch_uart.o"
-".\objects\mb_rtu.o"
+".\objects\tch_mb.o"
+".\objects\crc.o"
 --library_type=microlib --strict --scatter ".\objects\AT32F403ACGU7_PTP.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -76,3 +76,25 @@ struct serial_device *tch_get_serial(const char *name)
     }
     return NULL;
 }
+
+/**
+ * @brief 清除对应串口上的数据
+ */
+int tch_serial_rx_reset(struct serial_device *px_serial)
+{
+    struct serial_rx_configure *px_serial_rx = NULL;
+    if (strcmp((px_serial->uart.name), "usart1") == 0)
+    {
+        px_serial_rx = drv_get_serial_fifo_1();
+    }
+    else if (strcmp(px_serial->uart.name, "usart2") == 0)
+    {
+        px_serial_rx = NULL;
+    }
+    if (px_serial_rx == NULL)
+    {
+        return FALSE;
+    }
+    drv_serial_rx_clear(px_serial_rx);
+    return TRUE;
+}

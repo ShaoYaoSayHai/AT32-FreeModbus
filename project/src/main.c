@@ -35,7 +35,7 @@
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
 #include "tch_uart.h"
-#include "mb_rtu.h"
+#include "tch_mb.h"
 #include "drv_led.h"
 
 /* add user code end private includes */
@@ -110,9 +110,8 @@ int main(void)
 
     drv_led_set(green, TRUE);
 
-    struct serial_rx_configure *serial = drv_get_serial_fifo_1();
+    struct serial_rx_configure *serial_rx_1 = drv_get_serial_fifo_1();
     struct serial_device *serial_device_1 = tch_get_serial("usart1");
-    static uint16_t led_counter = 0;
     /* add user code end 2 */
 
     while (1)
@@ -122,20 +121,11 @@ int main(void)
         drv_led_blink(red);
         wk_delay_ms(1);
 
-        if (serial->is_finished)
+        if (serial_rx_1->is_finished)
         {
             // serial->is_finished = FALSE;
-            serial_device_1->ops->putc_sz( serial_device_1 , (char *)(serial->buffer) , serial->size );
-            drv_serial_rx_clear(serial);
-            led_counter++;
-            if ((led_counter % 2) == 1)
-            {
-                drv_led_set(green, FALSE);
-            }
-            else
-            {
-                drv_led_set(green, TRUE);
-            }
+            serial_device_1->ops->putc_sz(serial_device_1, (char *)(serial_rx_1->buffer), serial_rx_1->size);
+            drv_serial_rx_clear(serial_rx_1);
         }
 
         /* add user code end 3 */
